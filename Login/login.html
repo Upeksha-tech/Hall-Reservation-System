@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — Hall & Lab Reservation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Raleway:wght@200;400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="login.css">
+  
+</head>
+<body>
+
+  <!-- LEFT DECORATIVE PANEL -->
+  <div class="left-panel">
+    <div class="grid-lines"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="brand">
+      <div class="brand-icon">
+        <img src="images-removebg-preview.png" alt="faulty of Science">
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h2>Book Your Hall<br> Instantly</h2>
+      <p>A unified reservation platform for lecture halls  <br> fast, transparent, and built for your campus workflow.</p>
+    </div>
+
+    <div class="availability-strip">
+      <div class="badge"><span class="dot"></span> Mon – Sun</div>
+      <div class="badge">8 AM – 10 PM</div>
+    </div>
+  </div>
+
+  <!-- RIGHT LOGIN PANEL -->
+  <div class="right-panel">
+    <div class="card">
+      <div class="card-header">
+        <h1>Sign in</h1>
+        <p>Sign in with your username and password.</p>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <form method="post" action="process_login.php" class="login-form">
+        <div id="error-msg" class="error-box" role="alert" aria-live="polite"></div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" required placeholder="Enter your username" autocomplete="username" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required placeholder="Enter your password" autocomplete="current-password" />
+        </div>
+
+        <button type="submit" class="primary">Sign in</button>
+      </form>
+      
+      <br>
+      <div class="info-box">
+        <a href="https://sspr.kln.ac.lk/Password/Reset" target="_blank">Forgot Password?</a> 
+      </div>
+    </div>
+
+    <br><br><br>
+    <div class="footer-meta">
+      <span>© 2026 University Portal</span>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const u = document.getElementById('username');
+      if(u) u.focus();
+
+      // Show error from query string (e.g. ?error=missing or ?error=invalid)
+      const params = new URLSearchParams(window.location.search);
+      const error = params.get('error');
+      const errEl = document.getElementById('error-msg');
+      if (errEl && error) {
+        const msgs = {
+          missing: 'Please enter both username and password.',
+          invalid: 'Invalid username or password. Please try again.'
+        };
+        errEl.textContent = msgs[error] || 'An error occurred. Please try again.';
+        errEl.classList.add('show');
+        errEl.setAttribute('aria-hidden', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
