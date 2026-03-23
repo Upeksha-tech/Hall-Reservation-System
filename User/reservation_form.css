@@ -1,0 +1,216 @@
+        :root {
+            --maroon: #800000;
+            --yellow: #ffc107;
+            --bg-light: #fdf7f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, var(--maroon), #4b0000);
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        header p {
+            margin: 4px 0 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .header-main {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1 1 auto; /* take remaining space so buttons stay on the right */
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        form {
+            padding: 24px 30px 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px 24px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="datetime-local"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        .section-title {
+            margin: 24px 0 12px;
+            font-weight: 700;
+            color: var(--maroon);
+            border-left: 4px solid var(--yellow);
+            padding-left: 10px;
+        }
+        .center data {
+            padding-left: 25px;
+        }
+        .center data p {
+            font-weight: 400;
+        }
+        .note {
+            background: rgba(128, 0, 0, 0.05);
+            border-left: 4px solid var(--maroon);
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #4b0000;
+        }
+        .errors {
+            background: #ffe5e5;
+            border-left: 4px solid #d32f2f;
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            color: #b71c1c;
+            font-size: 0.9rem;
+        }
+        .success {
+            background: #e6ffed;
+            border-left: 4px solid #2e7d32;
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            color: #1b5e20;
+            font-size: 0.9rem;
+        }
+        .hall-layout {
+            display: grid;
+            grid-template-columns: 2fr 1.3fr;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .hall-details {
+            background: rgba(255, 193, 7, 0.12);
+            border-radius: 8px;
+            padding: 12px 14px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 193, 7, 0.6);
+        }
+        .hall-details h4 {
+            margin: 0 0 6px;
+            color: var(--maroon);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .hall-details p {
+            margin: 2px 0;
+        }
+        #hallType,
+        #hallCapacity {
+            font-weight: 600;
+            color: #000;
+        }
+        .terms {
+            margin-top: 16px;
+            font-size: 0.9rem;
+        }
+        .terms input {
+            margin-right: 6px;
+        }
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .btn-primary {
+            background: var(--maroon);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .btn-primary:hover {
+            background: #4b0000;
+        }
+        .btn-secondary {
+            background: #fff;
+            color: var(--maroon);
+            border: 1px solid var(--maroon);
+            padding: 10px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+       .btn-secondary:hover {
+            /*background: rgba(211, 218, 172, 0.04);*/
+            border: 1px solid black;
+            color: black;
+        }
+        .link-inline {
+            color: var(--maroon);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .link-inline:hover {
+            text-decoration: underline;
+        }
+        .calendar-embed-wrapper {
+            margin: 20px 0;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+        }
+        .calendar-embed-title {
+            margin: 0 0 4px;
+            font-size: 1rem;
+            color: var(--maroon);
+        }
+        .calendar-embed-note {
+            margin: 0 0 10px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        @media (max-width: 720px) {
+            .hall-layout {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 1.3rem;
+            }
+        }
